@@ -19,10 +19,9 @@ main()
 	
 	while (finished != 1) {
 		r_pos = get_chunk(input);
-		printf("%d\n", r_pos);
 		w_pos = write_chunk_to_out(output);
 	}
-	printf("%s\n%s\n%d\n", input, output, r_pos);
+	printf("%s\n%s\n", input, output);
 }
 
 int get_chunk(char str[])
