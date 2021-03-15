@@ -1,16 +1,17 @@
 #include <stdio.h>
 
-main()
+int main()
 {
-  int c, s;
+  int c, in_space;
 
-  s = 0; 
-  while ((c = getchar()) != EOF)
+  in_space = 0;
+  while ((c = getchar()) != EOF) {
 	  if (c != ' ') {
 		  putchar(c);
-		  s = 0;
-	  } else if (s == 0) {
+		  in_space = 0;
+	  } else if (!in_space) {
 		  putchar(c);
-		  s = 1;
+		  in_space = 1;
 	  }
+  }
 }

@@ -11,9 +11,9 @@ int w_pos = 0;
 int finished = 0;
 char chunk[TAB_WIDTH + 1];
 	
-main()
+int main() /* All similar to previous example. */
 {
-	char input[MAXLINE] = {'A','B','\n','C','D',' ',' ',' ',' ',' ',' ','B','C'};
+	char input[MAXLINE] = {'A','B','\n','C','D',' ',' ',' ',' ',' ',' ','B','C','\0'};
 	char output[MAXLINE];
 	chunk[TAB_WIDTH + 1] = '\0';
 	
@@ -27,7 +27,7 @@ main()
 int get_chunk(char str[])
 {
 	int i, in_space, space_start;
-	i = in_space = space_start = 0;
+	i = in_space = space_start = 0; /* Used to track if we enter a new tab line with spaces, and where we start those spaces. */
 
 	while ( i<TAB_WIDTH ) {
 		if (str[r_pos+i] == '\n') {

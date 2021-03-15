@@ -3,21 +3,21 @@
 #define TAB_WIDTH 8
 #define MAXLINE 1000
 
-int get_chunk(char str[]);
-int write_chunk_to_out(char str[]);
+int get_chunk(char str[]);			/* Process input for current column and stores it to chunk. Includes logic for newlines and string end. */
+int write_chunk_to_out(char str[]); /* Writes chunk to output. */
 
 int r_pos = 0;	
-int w_pos = 0;
-int finished = 0;
-char chunk[TAB_WIDTH + 1];
+int w_pos = 0;				/* Read and write positions in input/output strings.  */
+int finished = 0;			/* Indicates completion of task. */
+char chunk[TAB_WIDTH + 1];	/* Stores information for current column. */
 	
-main()
+int main()
 {
-	char input[MAXLINE] = {'A','B','C','D','\t','A','\n','B','C','\t','A','B','\t','e','n','d','.'};
+	char input[MAXLINE] = {'A','B','C','D','\t','A','\n','B','C','\t','A','B','\t','e','n','d','.'}; /* Test. */
 	char output[MAXLINE];
-	chunk[TAB_WIDTH + 1] = '\0';
+	chunk[TAB_WIDTH + 1] = '\0'; /* Pre-assign end. */
 	
-	while (finished != 1) {
+	while (!finished) {
 		r_pos = get_chunk(input);
 		w_pos = write_chunk_to_out(output);
 	}
@@ -29,7 +29,7 @@ int get_chunk(char str[])
 	int i, j;
 	i = j = 0;
 
-	while ( i<TAB_WIDTH ) {
+	while ( i<TAB_WIDTH ) { /* Counter i increments up to a relevant escape sequence. */
 		if ( str[r_pos+i] == '\t' ) {
 			break;
 		} else if ( str[r_pos+i] == '\n' ) {
@@ -40,7 +40,7 @@ int get_chunk(char str[])
 			++i;
 		}
 	}
-	while ( i+j<TAB_WIDTH ) {
+	while ( i+j<TAB_WIDTH ) { /* Counter j replaces tabs with spaces. */
 		chunk[i+j] = ' ';
 		++j;
 	}

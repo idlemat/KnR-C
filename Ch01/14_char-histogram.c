@@ -4,15 +4,15 @@
 #define OUT 0
 #define LEN 26 
 
-main()
+int main()
 {
 	int i, j, c, max;
-	int letters[LEN];
+	int letters[LEN]; /* Stores counter for i-th letter in (i-1)-th position. */
 	for (i = 0; i < LEN; ++i)
 		letters[i] = 0;
 
 	while ((c = getchar()) != EOF) 
-		if ( c >= 'A' && c <= 'Z') {
+		if ( c >= 'A' && c <= 'Z') { /* Ignoring case. */
 			++letters[c - 'A'];
 		} else if ( c >= 'a' && c <= 'z' ) {
 			++letters[c - 'a'];
@@ -20,7 +20,7 @@ main()
 	
 	printf("\n++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
 
-	max = 0;
+	max = 0; /* Vertical histogram. */
 	for (i = 0; i < LEN; ++i)
 		if (max < letters[i]) 
 			max = letters[i];

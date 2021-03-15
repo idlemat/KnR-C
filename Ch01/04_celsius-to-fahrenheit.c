@@ -1,11 +1,11 @@
 #include <stdio.h>
 
-main() 
+int main() 
 {
     float cels, fahr;
 	float start, stop, step;
 
-	printf("====CELSIUS-FAHERENHEIT-CONVERSION====\n");
+	printf("====CELSIUS-FAHERENHEIT-CONVERSION====\n"); \* Print title *\
 
 	start = -20;
 	stop = 160;

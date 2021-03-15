@@ -4,7 +4,7 @@
 int getline(char line[], int maxline);
 void copy(char to[], char from[]);
 
-main()
+int main()
 {
 	int len;            
 	int c, i;            

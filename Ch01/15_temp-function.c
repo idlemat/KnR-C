@@ -2,7 +2,7 @@
 
 float convertCtoF(float);
 
-main() 
+int main() 
 {
     float cels, fahr;
 	float start, stop, step;
@@ -21,7 +21,7 @@ main()
 	}
 }
 
-float convertCtoF(float cel)
+float convertCtoF(float cel) /* Converts Celsius to Farenheit. */
 {
 	return (cel*(9.0/5.0))+32.0; 
 }

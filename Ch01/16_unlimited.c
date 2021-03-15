@@ -4,7 +4,7 @@
 int getline(char line[], int maxline);
 void copy(char to[], char from[]);
 
-main()
+int main()
 {
 	int len;            
 	int max;            
@@ -21,11 +21,11 @@ main()
 	return 0;
 }
 
-int getline(char s[],int lim)
+int getline(char s[], int lim)
 {
 	int c, i;
 	for ( i = 0; (c=getchar())!=EOF && c!='\n'; ++i)
-		if (i < lim-1)
+		if (i < lim-1) /* So we can copy up to lim, but count endlessly. */
 			s[i] = c;
 	if (c == '\n') {
 	    s[i] = c;

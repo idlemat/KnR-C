@@ -5,10 +5,10 @@ int getline(char line[], int maxline);
 int len(char str[]);
 void reverse(char line[], char rev[]);
 
-main() 
+int main() 
 {
 	char line[MAXLINE];
-	char enil[MAXLINE];
+	char enil[MAXLINE]; /* Space for reversed line. */
 	int len;
 	while ((len = getline(line, MAXLINE)) > 0) {
 		reverse(line, enil);
@@ -31,7 +31,7 @@ int getline(char s[],int lim)
 	return i;
 }
 
-int len(char s[])
+int len(char s[]) /* Returns length of a string. */
 {
 	int i;
 	i = 0;
@@ -40,7 +40,7 @@ int len(char s[])
 	return i - 1;
 }
 
-void reverse(char s[], char rvs[])
+void reverse(char s[], char rvs[]) /* Copies string from end to start into second string. */
 {
 	int max;
 	int i;

@@ -1,19 +1,19 @@
 #include <stdio.h>
 
-#define SPACY 0
-#define WORDY 1
+#define IN_SPACE 0
+#define IN_WORD 1
 
-main()
+int main()
 {
   int c, s;
 
-  s = WORDY; 
+  where = IN_WORD; 
   while ((c = getchar()) != EOF)
 	  if (c != ' ' && c != '\n' && c != '\t') {
 		  putchar(c);
-		  s = WORDY;
-	  } else if (s == WORDY) {
+		  where = IN_WORD;
+	  } else if (where == IN_WORD) {
 		  putchar('\n');
-		  s = SPACY;
+		  where = IN_SPACE;
 	  }
 }

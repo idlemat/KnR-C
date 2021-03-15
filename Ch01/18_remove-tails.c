@@ -4,12 +4,12 @@
 int getline(char line[], int maxline);
 int remove_trailing_spaces(char line[], int len);
 
-main() 
+int main() 
 {
 	char line[MAXLINE];
 	int len;
 	while ((len = getline(line, MAXLINE)) > 0)
-	    if (remove_trailing_spaces(line, len) == 1) {
+	    if (remove_trailing_spaces(line, len)) {
 			printf("%s\n", line);
 	    }
 	return 0;
@@ -29,7 +29,7 @@ int getline(char s[],int lim)
 	return i;
 }
 
-int remove_trailing_spaces(char s[], int k)
+int remove_trailing_spaces(char s[], int k) /* Runs backwards through the string, replacing space with \0. */
 {
 	--k;
 	while (k > -1)
@@ -37,7 +37,7 @@ int remove_trailing_spaces(char s[], int k)
 			s[k]='\0';
 			--k;
 		} else { 
-			return 1; // indicates that line isn't blank
+			return 1;   /* Indicates that line isn't blank. */
 		}
-	return 0; // indicates that line is blank
+	return 0; /* Indicates that line is blank.  */
 }
