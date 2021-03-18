@@ -4,7 +4,7 @@
 #define MAXLINE 1000
 
 int get_chunk(char str[]);			/* Process input for current column and stores it to chunk. Includes logic for newlines and string end. */
-int write_chunk_to_out(char str[]); /* Writes chunk to output. */
+int write_chunk_to_out(char str[]);	/* Writes chunk to output. */
 
 int r_pos = 0;	
 int w_pos = 0;				/* Read and write positions in input/output strings.  */
